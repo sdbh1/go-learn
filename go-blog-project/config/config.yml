@@ -1,0 +1,18 @@
+app:
+  name: blog
+  port: 5678
+  logpath: /logger/logfile/blog.logger
+
+database:
+  dsn: tester:123456@tcp(127.0.0.1:3306)/blog?charset=utf8mb4&parseTime=True&loc=Local
+  maxidleconns: 10
+  maxopencons: 100
+  logpath: /logger/logfile/blog.db.logger
+
+secret: jwt
+
+redis:
+  addr: localhost:6379
+  DB: 0
+  Password: ""
+

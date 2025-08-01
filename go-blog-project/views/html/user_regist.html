@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
+    <title>注册</title>
+    <style>
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <form id="registForm">
+            <table>
+                <tr>
+                    <td>用户名</td>
+                    <td><input id="user" name="username" type="text" size="20" autofocus /></td>
+                </tr>
+                <tr>
+                    <td>密码</td>
+                    <td><input id="password" name="password" type="password" size="20" /></td>
+                </tr>
+                <tr>
+                    <td align="center"><button type="submit">注册 </button> </td>
+                    <td align="right"><a href="/login">去登录</a></td>
+                </tr>
+            </table>
+        </form>
+        <span id="msg" style="color: red;"></span>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#registForm').submit(function (event) {
+                event.preventDefault(); // 阻止 form 的默认行为
+                
+                // 手动收集表单数据
+                const username = $.trim($('#user').val());
+                const pass = $.trim($('#password').val());
+                const digest = CryptoJS.MD5(pass).toString(CryptoJS.enc.Hex); // 直接在客户端对密码执行哈希
+                
+                // 构建 JSON 数据
+                const data = {
+                    username: username,
+                    password: digest
+                };
+                
+                $.ajax({
+                    url: "auth/register/submit",
+                    data: JSON.stringify(data), // 序列化数据为 JSON 字符串
+                    method: 'post',
+                    contentType: 'application/json', // 设置请求头为 JSON 格式
+                    dataType: 'json', // 期望响应为 JSON 格式
+                    success: function (result) {
+                        // 注册成功后重定向到登录页面
+                        window.location.href = "/login";
+                    }
+                }).fail(function (result) {
+                    $('#msg').html(result.responseText);
+                });
+            });
+        }); 
+    </script>
+</body>
