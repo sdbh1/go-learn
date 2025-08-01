@@ -1447,3 +1447,486 @@
 
 2025/08/01 18:43:21 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:28
 [0.513ms] [rows:1] SELECT * FROM `user` WHERE id = 297 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:43
+[8.480ms] [rows:1] INSERT INTO `user` (`name`,`display_name`,`password`,`post_num`) VALUES ('testuser','默认名字','testpassword',0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment_test.go:104
+[1.241ms] [rows:1] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:24
+[0.862ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 314 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:28
+[0.707ms] [rows:1] UPDATE `user` SET `name`='testuser',`display_name`='默认名字',`password`='testpassword',`post_num`=1 WHERE `id` = 314
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:55
+[4.665ms] [rows:1] INSERT INTO `post` (`create_time`,`update_time`,`delete_time`,`user_id`,`title`,`content`,`comment_num`,`like_num`) VALUES ('2025-08-01 19:10:18.821','2025-08-01 19:10:18.821',NULL,314,'测试标题','测试内容',0,0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:23
+[1.032ms] [rows:1] SELECT * FROM `post` WHERE `post`.`id` = 182 AND `post`.`delete_time` IS NULL ORDER BY `post`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:28
+[0.859ms] [rows:1] SELECT count(*) FROM `comment` WHERE post_id = 182 AND `comment`.`delete_time` IS NULL
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:33
+[0.881ms] [rows:1] UPDATE `post` SET `create_time`='2025-08-01 19:10:19',`update_time`='2025-08-01 19:10:18.83',`delete_time`=NULL,`user_id`=314,`title`='测试标题',`content`='测试内容',`comment_num`=1,`like_num`=0 WHERE `post`.`delete_time` IS NULL AND `id` = 182
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment.go:19
+[4.978ms] [rows:1] INSERT INTO `comment` (`create_time`,`update_time`,`delete_time`,`user_id`,`post_id`,`content`) VALUES ('2025-08-01 19:10:18.826','2025-08-01 19:10:18.826',NULL,314,182,'测试评论内容')
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:23
+[0.502ms] [rows:1] SELECT * FROM `post` WHERE `post`.`id` = 182 AND `post`.`delete_time` IS NULL ORDER BY `post`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:28
+[0.557ms] [rows:1] SELECT count(*) FROM `comment` WHERE post_id = 182 AND `comment`.`delete_time` IS NULL
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:33
+[0.679ms] [rows:1] UPDATE `post` SET `create_time`='2025-08-01 19:10:19',`update_time`='2025-08-01 19:10:18.832',`delete_time`=NULL,`user_id`=314,`title`='测试标题',`content`='测试内容',`comment_num`=2,`like_num`=0 WHERE `post`.`delete_time` IS NULL AND `id` = 182
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment.go:19
+[2.357ms] [rows:1] INSERT INTO `comment` (`create_time`,`update_time`,`delete_time`,`user_id`,`post_id`,`content`) VALUES ('2025-08-01 19:10:18.831','2025-08-01 19:10:18.831',NULL,314,182,'测试评论内容')
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment_test.go:38
+[0.887ms] [rows:1] SELECT * FROM `comment` WHERE id = 78 AND `comment`.`delete_time` IS NULL ORDER BY `comment`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:43
+[0.513ms] [rows:1] INSERT INTO `user` (`name`,`display_name`,`password`,`post_num`) VALUES ('testuser','默认名字','testpassword',0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment_test.go:104
+[0.466ms] [rows:1] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:24
+[0.645ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 315 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:28
+[0.445ms] [rows:1] UPDATE `user` SET `name`='testuser',`display_name`='默认名字',`password`='testpassword',`post_num`=1 WHERE `id` = 315
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:55
+[1.686ms] [rows:1] INSERT INTO `post` (`create_time`,`update_time`,`delete_time`,`user_id`,`title`,`content`,`comment_num`,`like_num`) VALUES ('2025-08-01 19:10:18.836','2025-08-01 19:10:18.836',NULL,315,'测试标题','测试内容',0,0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:23
+[0.463ms] [rows:1] SELECT * FROM `post` WHERE `post`.`id` = 183 AND `post`.`delete_time` IS NULL ORDER BY `post`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:28
+[0.484ms] [rows:1] SELECT count(*) FROM `comment` WHERE post_id = 183 AND `comment`.`delete_time` IS NULL
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:33
+[0.530ms] [rows:1] UPDATE `post` SET `create_time`='2025-08-01 19:10:19',`update_time`='2025-08-01 19:10:18.84',`delete_time`=NULL,`user_id`=315,`title`='测试标题',`content`='测试内容',`comment_num`=1,`like_num`=0 WHERE `post`.`delete_time` IS NULL AND `id` = 183
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment.go:19
+[2.070ms] [rows:1] INSERT INTO `comment` (`create_time`,`update_time`,`delete_time`,`user_id`,`post_id`,`content`) VALUES ('2025-08-01 19:10:18.838','2025-08-01 19:10:18.838',NULL,315,183,'测试评论内容 0')
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:23
+[0.521ms] [rows:1] SELECT * FROM `post` WHERE `post`.`id` = 183 AND `post`.`delete_time` IS NULL ORDER BY `post`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:28
+[0.556ms] [rows:1] SELECT count(*) FROM `comment` WHERE post_id = 183 AND `comment`.`delete_time` IS NULL
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:33
+[0.573ms] [rows:1] UPDATE `post` SET `create_time`='2025-08-01 19:10:19',`update_time`='2025-08-01 19:10:18.842',`delete_time`=NULL,`user_id`=315,`title`='测试标题',`content`='测试内容',`comment_num`=2,`like_num`=0 WHERE `post`.`delete_time` IS NULL AND `id` = 183
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment.go:19
+[2.404ms] [rows:1] INSERT INTO `comment` (`create_time`,`update_time`,`delete_time`,`user_id`,`post_id`,`content`) VALUES ('2025-08-01 19:10:18.84','2025-08-01 19:10:18.84',NULL,315,183,'测试评论内容 1')
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:23
+[0.559ms] [rows:1] SELECT * FROM `post` WHERE `post`.`id` = 183 AND `post`.`delete_time` IS NULL ORDER BY `post`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:28
+[0.541ms] [rows:1] SELECT count(*) FROM `comment` WHERE post_id = 183 AND `comment`.`delete_time` IS NULL
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:33
+[0.562ms] [rows:1] UPDATE `post` SET `create_time`='2025-08-01 19:10:19',`update_time`='2025-08-01 19:10:18.844',`delete_time`=NULL,`user_id`=315,`title`='测试标题',`content`='测试内容',`comment_num`=3,`like_num`=0 WHERE `post`.`delete_time` IS NULL AND `id` = 183
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment.go:19
+[2.301ms] [rows:1] INSERT INTO `comment` (`create_time`,`update_time`,`delete_time`,`user_id`,`post_id`,`content`) VALUES ('2025-08-01 19:10:18.843','2025-08-01 19:10:18.843',NULL,315,183,'测试评论内容 2')
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment.go:32
+[0.887ms] [rows:3] SELECT * FROM `comment` WHERE post_id = 183 AND `comment`.`delete_time` IS NULL
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:43
+[0.533ms] [rows:1] INSERT INTO `user` (`name`,`display_name`,`password`,`post_num`) VALUES ('testuser','默认名字','testpassword',0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment_test.go:104
+[0.543ms] [rows:1] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:24
+[0.551ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 316 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:28
+[0.548ms] [rows:1] UPDATE `user` SET `name`='testuser',`display_name`='默认名字',`password`='testpassword',`post_num`=1 WHERE `id` = 316
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:55
+[1.702ms] [rows:1] INSERT INTO `post` (`create_time`,`update_time`,`delete_time`,`user_id`,`title`,`content`,`comment_num`,`like_num`) VALUES ('2025-08-01 19:10:18.848','2025-08-01 19:10:18.848',NULL,316,'测试标题','测试内容',0,0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:23
+[0.546ms] [rows:1] SELECT * FROM `post` WHERE `post`.`id` = 184 AND `post`.`delete_time` IS NULL ORDER BY `post`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:28
+[0.491ms] [rows:1] SELECT count(*) FROM `comment` WHERE post_id = 184 AND `comment`.`delete_time` IS NULL
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:33
+[0.528ms] [rows:1] UPDATE `post` SET `create_time`='2025-08-01 19:10:19',`update_time`='2025-08-01 19:10:18.852',`delete_time`=NULL,`user_id`=316,`title`='测试标题',`content`='测试内容',`comment_num`=1,`like_num`=0 WHERE `post`.`delete_time` IS NULL AND `id` = 184
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment.go:19
+[2.159ms] [rows:1] INSERT INTO `comment` (`create_time`,`update_time`,`delete_time`,`user_id`,`post_id`,`content`) VALUES ('2025-08-01 19:10:18.85','2025-08-01 19:10:18.85',NULL,316,184,'测试评论内容')
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment.go:47
+[0.751ms] [rows:1] SELECT * FROM `comment` WHERE `comment`.`id` = 83 AND `comment`.`delete_time` IS NULL ORDER BY `comment`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:42
+[0.564ms] [rows:1] SELECT * FROM `post` WHERE `post`.`id` = 184 AND `post`.`delete_time` IS NULL ORDER BY `post`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:47
+[0.516ms] [rows:1] SELECT count(*) FROM `comment` WHERE post_id = 184 AND `comment`.`delete_time` IS NULL
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:52
+[0.604ms] [rows:1] UPDATE `post` SET `create_time`='2025-08-01 19:10:19',`update_time`='2025-08-01 19:10:18.855',`delete_time`=NULL,`user_id`=316,`title`='测试标题',`content`='测试内容',`comment_num`=0,`like_num`=0 WHERE `post`.`delete_time` IS NULL AND `id` = 184
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment.go:59
+[2.787ms] [rows:1] UPDATE `comment` SET `delete_time`='2025-08-01 19:10:18.853' WHERE `comment`.`id` = 83 AND `comment`.`delete_time` IS NULL
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment.go:47
+[0.510ms] [rows:0] SELECT * FROM `comment` WHERE `comment`.`id` = 83 AND `comment`.`delete_time` IS NULL ORDER BY `comment`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment_test.go:94
+[0.530ms] [rows:0] SELECT * FROM `comment` WHERE id = 83 AND `comment`.`delete_time` IS NULL ORDER BY `comment`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:15
+[0.494ms] [rows:0] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:43
+[0.540ms] [rows:1] INSERT INTO `user` (`name`,`display_name`,`password`,`post_num`) VALUES ('testuser','默认名字','testpassword',0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post_test.go:174
+[0.562ms] [rows:1] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:24
+[0.505ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 317 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:28
+[0.477ms] [rows:1] UPDATE `user` SET `name`='testuser',`display_name`='默认名字',`password`='testpassword',`post_num`=1 WHERE `id` = 317
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:55
+[1.600ms] [rows:1] INSERT INTO `post` (`create_time`,`update_time`,`delete_time`,`user_id`,`title`,`content`,`comment_num`,`like_num`) VALUES ('2025-08-01 19:10:18.86','2025-08-01 19:10:18.86',NULL,317,'testtitle','testcontent',0,0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post_test.go:28
+[0.735ms] [rows:1] SELECT * FROM `post` WHERE id = 185 AND `post`.`delete_time` IS NULL ORDER BY `post`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:70
+[0.720ms] [rows:1] SELECT * FROM `post` WHERE `post`.`id` = 185 AND `post`.`delete_time` IS NULL ORDER BY `post`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:82
+[0.763ms] [rows:1] UPDATE `post` SET `create_time`='2025-08-01 19:10:19',`update_time`='2025-08-01 19:10:18.863',`delete_time`=NULL,`user_id`=317,`title`='测试标题2',`content`='测试内容2',`comment_num`=0,`like_num`=0 WHERE `post`.`delete_time` IS NULL AND `id` = 185
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post_test.go:36
+[0.859ms] [rows:1] SELECT * FROM `post` WHERE id = 185 AND `post`.`delete_time` IS NULL AND `post`.`id` = 185 ORDER BY `post`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post_test.go:39
+[0.935ms] [rows:1] SELECT * FROM `post` WHERE title = '测试标题2' AND `post`.`delete_time` IS NULL AND `post`.`id` = 185 ORDER BY `post`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:15
+[0.515ms] [rows:0] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:43
+[0.512ms] [rows:1] INSERT INTO `user` (`name`,`display_name`,`password`,`post_num`) VALUES ('testuser','默认名字','testpassword',0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post_test.go:174
+[0.560ms] [rows:1] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:24
+[0.423ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 318 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:28
+[0.502ms] [rows:1] UPDATE `user` SET `name`='testuser',`display_name`='默认名字',`password`='testpassword',`post_num`=1 WHERE `id` = 318
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:55
+[1.516ms] [rows:1] INSERT INTO `post` (`create_time`,`update_time`,`delete_time`,`user_id`,`title`,`content`,`comment_num`,`like_num`) VALUES ('2025-08-01 19:10:18.869','2025-08-01 19:10:18.869',NULL,318,'testtitle','testcontent',0,0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:15
+[0.434ms] [rows:0] SELECT * FROM `user` WHERE name = 'testuser1' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:43
+[0.408ms] [rows:1] INSERT INTO `user` (`name`,`display_name`,`password`,`post_num`) VALUES ('testuser1','默认名字','testpassword',0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post_test.go:174
+[0.431ms] [rows:1] SELECT * FROM `user` WHERE name = 'testuser1' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:24
+[0.580ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 319 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:28
+[0.451ms] [rows:1] UPDATE `user` SET `name`='testuser1',`display_name`='默认名字',`password`='testpassword',`post_num`=1 WHERE `id` = 319
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:55
+[1.498ms] [rows:1] INSERT INTO `post` (`create_time`,`update_time`,`delete_time`,`user_id`,`title`,`content`,`comment_num`,`like_num`) VALUES ('2025-08-01 19:10:18.872','2025-08-01 19:10:18.872',NULL,319,'testtitle1','testcontent1',0,0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:15
+[0.469ms] [rows:0] SELECT * FROM `user` WHERE name = 'testuser2' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:43
+[0.534ms] [rows:1] INSERT INTO `user` (`name`,`display_name`,`password`,`post_num`) VALUES ('testuser2','默认名字','testpassword',0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post_test.go:174
+[0.529ms] [rows:1] SELECT * FROM `user` WHERE name = 'testuser2' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:24
+[0.723ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 320 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:28
+[0.580ms] [rows:1] UPDATE `user` SET `name`='testuser2',`display_name`='默认名字',`password`='testpassword',`post_num`=1 WHERE `id` = 320
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:55
+[1.886ms] [rows:1] INSERT INTO `post` (`create_time`,`update_time`,`delete_time`,`user_id`,`title`,`content`,`comment_num`,`like_num`) VALUES ('2025-08-01 19:10:18.875','2025-08-01 19:10:18.875',NULL,320,'testtitle2','testcontent2',0,0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:15
+[0.513ms] [rows:1] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:24
+[0.474ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 318 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:28
+[0.411ms] [rows:1] UPDATE `user` SET `name`='testuser',`display_name`='默认名字',`password`='testpassword',`post_num`=2 WHERE `id` = 318
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:55
+[1.477ms] [rows:1] INSERT INTO `post` (`create_time`,`update_time`,`delete_time`,`user_id`,`title`,`content`,`comment_num`,`like_num`) VALUES ('2025-08-01 19:10:18.877','2025-08-01 19:10:18.877',NULL,318,'testtitle3','testcontent3',0,0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:18
+[0.696ms] [rows:3] SELECT * FROM `post` WHERE `post`.`delete_time` IS NULL LIMIT 3
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:43
+[0.571ms] [rows:1] INSERT INTO `user` (`name`,`display_name`,`password`,`post_num`) VALUES ('testuser','默认名字','testpassword',0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:15
+[0.529ms] [rows:1] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:24
+[0.482ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 321 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:28
+[0.540ms] [rows:1] UPDATE `user` SET `name`='testuser',`display_name`='默认名字',`password`='testpassword',`post_num`=1 WHERE `id` = 321
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:55
+[1.576ms] [rows:1] INSERT INTO `post` (`create_time`,`update_time`,`delete_time`,`user_id`,`title`,`content`,`comment_num`,`like_num`) VALUES ('2025-08-01 19:10:18.882','2025-08-01 19:10:18.882',NULL,321,'testtitle','testcontent',0,0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:94
+[0.684ms] [rows:1] SELECT * FROM `post` WHERE `post`.`id` = 190 AND `post`.`delete_time` IS NULL ORDER BY `post`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:94
+[0.719ms] [rows:1] SELECT * FROM `post` WHERE `post`.`id` = 190 AND `post`.`delete_time` IS NULL ORDER BY `post`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:105
+[0.714ms] [rows:1] UPDATE `post` SET `delete_time`='2025-08-01 19:10:18.885' WHERE `post`.`id` = 190 AND `post`.`delete_time` IS NULL
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:15
+[0.560ms] [rows:0] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:43
+[0.475ms] [rows:1] INSERT INTO `user` (`name`,`display_name`,`password`,`post_num`) VALUES ('testuser','默认名字','testpassword',0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post_test.go:174
+[0.493ms] [rows:1] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:24
+[0.453ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 322 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:28
+[0.471ms] [rows:1] UPDATE `user` SET `name`='testuser',`display_name`='默认名字',`password`='testpassword',`post_num`=1 WHERE `id` = 322
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:55
+[1.484ms] [rows:1] INSERT INTO `post` (`create_time`,`update_time`,`delete_time`,`user_id`,`title`,`content`,`comment_num`,`like_num`) VALUES ('2025-08-01 19:10:18.889','2025-08-01 19:10:18.889',NULL,322,'详情测试标题','testcontent',0,0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:115
+[0.478ms] [rows:1] SELECT * FROM `post` WHERE `post`.`id` = 191 AND `post`.`delete_time` IS NULL ORDER BY `post`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:128
+[0.813ms] [rows:1] SELECT * FROM `post` WHERE `post`.`delete_time` IS NULL ORDER BY comment_num DESC LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:15
+[0.524ms] [rows:0] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:43
+[0.543ms] [rows:1] INSERT INTO `user` (`name`,`display_name`,`password`,`post_num`) VALUES ('testuser','默认名字','testpassword',0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post_test.go:174
+[0.554ms] [rows:1] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:24
+[0.610ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 323 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:28
+[0.536ms] [rows:1] UPDATE `user` SET `name`='testuser',`display_name`='默认名字',`password`='testpassword',`post_num`=1 WHERE `id` = 323
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:55
+[1.808ms] [rows:1] INSERT INTO `post` (`create_time`,`update_time`,`delete_time`,`user_id`,`title`,`content`,`comment_num`,`like_num`) VALUES ('2025-08-01 19:10:18.895','2025-08-01 19:10:18.895',NULL,323,'testtitle','testcontent',0,0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:15
+[0.622ms] [rows:1] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:24
+[0.541ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 323 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:28
+[0.684ms] [rows:1] UPDATE `user` SET `name`='testuser',`display_name`='默认名字',`password`='testpassword',`post_num`=2 WHERE `id` = 323
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:55
+[1.872ms] [rows:1] INSERT INTO `post` (`create_time`,`update_time`,`delete_time`,`user_id`,`title`,`content`,`comment_num`,`like_num`) VALUES ('2025-08-01 19:10:18.897','2025-08-01 19:10:18.897',NULL,323,'testtitle1','testcontent1',0,0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:15
+[0.675ms] [rows:1] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:24
+[0.728ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 323 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:28
+[0.663ms] [rows:1] UPDATE `user` SET `name`='testuser',`display_name`='默认名字',`password`='testpassword',`post_num`=3 WHERE `id` = 323
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:55
+[2.069ms] [rows:1] INSERT INTO `post` (`create_time`,`update_time`,`delete_time`,`user_id`,`title`,`content`,`comment_num`,`like_num`) VALUES ('2025-08-01 19:10:18.9','2025-08-01 19:10:18.9',NULL,323,'testtitle2','testcontent2',0,0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:15
+[0.629ms] [rows:1] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:24
+[0.578ms] [rows:1] SELECT * FROM `user` WHERE `user`.`id` = 323 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/post.go:28
+[0.692ms] [rows:1] UPDATE `user` SET `name`='testuser',`display_name`='默认名字',`password`='testpassword',`post_num`=4 WHERE `id` = 323
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:55
+[1.967ms] [rows:1] INSERT INTO `post` (`create_time`,`update_time`,`delete_time`,`user_id`,`title`,`content`,`comment_num`,`like_num`) VALUES ('2025-08-01 19:10:18.903','2025-08-01 19:10:18.903',NULL,323,'testtitle3','testcontent3',0,0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:15
+[0.607ms] [rows:1] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:23
+[0.522ms] [rows:1] SELECT * FROM `post` WHERE `post`.`id` = 192 AND `post`.`delete_time` IS NULL ORDER BY `post`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:28
+[0.509ms] [rows:1] SELECT count(*) FROM `comment` WHERE post_id = 192 AND `comment`.`delete_time` IS NULL
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:33
+[0.611ms] [rows:1] UPDATE `post` SET `create_time`='2025-08-01 19:10:19',`update_time`='2025-08-01 19:10:18.907',`delete_time`=NULL,`user_id`=323,`title`='testtitle',`content`='testcontent',`comment_num`=1,`like_num`=0 WHERE `post`.`delete_time` IS NULL AND `id` = 192
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment.go:19
+[2.470ms] [rows:1] INSERT INTO `comment` (`create_time`,`update_time`,`delete_time`,`user_id`,`post_id`,`content`) VALUES ('2025-08-01 19:10:18.906','2025-08-01 19:10:18.906',NULL,323,192,'testcomment1')
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:23
+[0.505ms] [rows:1] SELECT * FROM `post` WHERE `post`.`id` = 193 AND `post`.`delete_time` IS NULL ORDER BY `post`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:28
+[0.573ms] [rows:1] SELECT count(*) FROM `comment` WHERE post_id = 193 AND `comment`.`delete_time` IS NULL
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:33
+[0.541ms] [rows:1] UPDATE `post` SET `create_time`='2025-08-01 19:10:19',`update_time`='2025-08-01 19:10:18.91',`delete_time`=NULL,`user_id`=323,`title`='testtitle1',`content`='testcontent1',`comment_num`=1,`like_num`=0 WHERE `post`.`delete_time` IS NULL AND `id` = 193
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment.go:19
+[2.277ms] [rows:1] INSERT INTO `comment` (`create_time`,`update_time`,`delete_time`,`user_id`,`post_id`,`content`) VALUES ('2025-08-01 19:10:18.908','2025-08-01 19:10:18.908',NULL,323,193,'testcomment2')
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:23
+[0.519ms] [rows:1] SELECT * FROM `post` WHERE `post`.`id` = 194 AND `post`.`delete_time` IS NULL ORDER BY `post`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:28
+[0.424ms] [rows:1] SELECT count(*) FROM `comment` WHERE post_id = 194 AND `comment`.`delete_time` IS NULL
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:33
+[0.593ms] [rows:1] UPDATE `post` SET `create_time`='2025-08-01 19:10:19',`update_time`='2025-08-01 19:10:18.912',`delete_time`=NULL,`user_id`=323,`title`='testtitle2',`content`='testcontent2',`comment_num`=1,`like_num`=0 WHERE `post`.`delete_time` IS NULL AND `id` = 194
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment.go:19
+[2.154ms] [rows:1] INSERT INTO `comment` (`create_time`,`update_time`,`delete_time`,`user_id`,`post_id`,`content`) VALUES ('2025-08-01 19:10:18.91','2025-08-01 19:10:18.91',NULL,323,194,'testcomment3')
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:23
+[0.496ms] [rows:1] SELECT * FROM `post` WHERE `post`.`id` = 195 AND `post`.`delete_time` IS NULL ORDER BY `post`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:28
+[0.440ms] [rows:1] SELECT count(*) FROM `comment` WHERE post_id = 195 AND `comment`.`delete_time` IS NULL
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:33
+[0.575ms] [rows:1] UPDATE `post` SET `create_time`='2025-08-01 19:10:19',`update_time`='2025-08-01 19:10:18.914',`delete_time`=NULL,`user_id`=323,`title`='testtitle3',`content`='testcontent3',`comment_num`=1,`like_num`=0 WHERE `post`.`delete_time` IS NULL AND `id` = 195
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment.go:19
+[2.015ms] [rows:1] INSERT INTO `comment` (`create_time`,`update_time`,`delete_time`,`user_id`,`post_id`,`content`) VALUES ('2025-08-01 19:10:18.913','2025-08-01 19:10:18.913',NULL,323,195,'testcomment4')
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:23
+[0.645ms] [rows:1] SELECT * FROM `post` WHERE `post`.`id` = 193 AND `post`.`delete_time` IS NULL ORDER BY `post`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:28
+[0.567ms] [rows:1] SELECT count(*) FROM `comment` WHERE post_id = 193 AND `comment`.`delete_time` IS NULL
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/model/comment.go:33
+[0.680ms] [rows:1] UPDATE `post` SET `create_time`='2025-08-01 19:10:19',`update_time`='2025-08-01 19:10:18.916',`delete_time`=NULL,`user_id`=323,`title`='testtitle1',`content`='testcontent1',`comment_num`=2,`like_num`=0 WHERE `post`.`delete_time` IS NULL AND `id` = 193
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/comment.go:19
+[2.494ms] [rows:1] INSERT INTO `comment` (`create_time`,`update_time`,`delete_time`,`user_id`,`post_id`,`content`) VALUES ('2025-08-01 19:10:18.915','2025-08-01 19:10:18.915',NULL,323,193,'testcomment5')
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/post.go:144
+[0.876ms] [rows:4] SELECT id,user_id, title, create_time, comment_num, like_num FROM `post` WHERE user_id = 323 AND `post`.`delete_time` IS NULL
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:43
+[0.508ms] [rows:1] INSERT INTO `user` (`name`,`display_name`,`password`,`post_num`) VALUES ('testuser','默认名字','passwordhash',0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:43 Error 1062 (23000): Duplicate entry 'testuser' for key 'user.idx_name'
+[0.450ms] [rows:0] INSERT INTO `user` (`name`,`display_name`,`password`,`post_num`) VALUES ('testuser','默认名字','passwordhash',0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:43
+[0.327ms] [rows:1] INSERT INTO `user` (`name`,`display_name`,`password`,`post_num`) VALUES ('testuser','默认名字','e10adc3949ba59abbe56e057f20f883e',0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:15
+[0.390ms] [rows:1] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:28
+[0.634ms] [rows:1] SELECT * FROM `user` WHERE id = 326 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:28
+[0.500ms] [rows:0] SELECT * FROM `user` WHERE id = 999999 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:43
+[0.397ms] [rows:1] INSERT INTO `user` (`name`,`display_name`,`password`,`post_num`) VALUES ('testuser','默认名字','e10adc3949ba59abbe56e057f20f883e',0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:15
+[0.408ms] [rows:1] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:15
+[0.426ms] [rows:0] SELECT * FROM `user` WHERE name = 'ok' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:43
+[0.482ms] [rows:1] INSERT INTO `user` (`name`,`display_name`,`password`,`post_num`) VALUES ('testuser','默认名字','e10adc3949ba59abbe56e057f20f883e',0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:15
+[0.454ms] [rows:1] SELECT * FROM `user` WHERE name = 'testuser' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user_updater.go:44
+[0.564ms] [rows:1] SELECT `display_name` FROM `user` WHERE id = 328 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user_updater.go:71
+[0.559ms] [rows:1] UPDATE `user` SET `display_name`='修改后名字' WHERE id = 328
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:28
+[0.466ms] [rows:1] SELECT * FROM `user` WHERE id = 328 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user_updater.go:44
+[0.664ms] [rows:1] SELECT `name` FROM `user` WHERE id = 328 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user_updater.go:44
+[0.437ms] [rows:1] SELECT `name` FROM `user` WHERE id = 328 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:43
+[0.587ms] [rows:1] INSERT INTO `user` (`name`,`display_name`,`password`,`post_num`) VALUES ('testuser2','默认名字','e10adc3949ba59abbe56e057f20f883e',0)
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:15
+[0.561ms] [rows:1] SELECT * FROM `user` WHERE name = 'testuser2' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user_updater.go:44
+[0.627ms] [rows:1] SELECT `password` FROM `user` WHERE id = 329 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user_updater.go:71
+[0.688ms] [rows:1] UPDATE `user` SET `password`='c33367701511b4f6020ec61ded352059' WHERE id = 329
+
+2025/08/01 19:10:18 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:28
+[0.530ms] [rows:1] SELECT * FROM `user` WHERE id = 329 ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:11:42 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:15
+[3.165ms] [rows:1] SELECT * FROM `user` WHERE name = '1234' ORDER BY `user`.`id` LIMIT 1
+
+2025/08/01 19:11:52 /home/sdbh/project/go/go-learn/go-blog-project/database/gorm/user.go:15
+[0.945ms] [rows:1] SELECT * FROM `user` WHERE name = '1234' ORDER BY `user`.`id` LIMIT 1
